@@ -1,7 +1,10 @@
-// Export using ES modules syntax since the project has "type": "module" in package.json
+// Import tailwindcss explicitly
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
+
 export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
+  plugins: [
+    tailwindcss,
+    autoprefixer,
+  ],
+};

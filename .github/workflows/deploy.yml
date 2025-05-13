@@ -28,6 +28,7 @@ jobs:
           echo "Node version: $(node -v)"
           echo "NPM version: $(npm -v)"
           npm install
+          npm install postcss autoprefixer tailwindcss --save-dev
 
       - name: Build project
         run: |
