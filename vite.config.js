@@ -8,18 +8,20 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/EngRevision/',  // Updated for GitHub Pages
+  base: '/EngRevision/',  // Base path for GitHub Pages
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    // Ensure files are emitted properly for module scripts
+    outDir: 'dist',       // Output directory
+    emptyOutDir: true,    // Clean the output directory before build
+    minify: 'terser',     // Use terser for minification
+    sourcemap: false,     // No source maps in production
+    // Ensure proper file naming
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
-    },
-    emptyOutDir: true
+    }
   }
 })
