@@ -21,5 +21,18 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
-  }
+  },
+  // Add Node.js polyfills for browser APIs
+  define: {
+    global: {},
+    'process.env': {}
+  },
+  // Polyfill Node.js built-ins
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: 'globalThis',
+      },
+    },
+  },
 })

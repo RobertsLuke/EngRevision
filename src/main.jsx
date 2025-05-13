@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import './node-polyfills' // Import the polyfills
 import './index.css'
 
 // Import components
