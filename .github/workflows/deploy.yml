@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: ['main']
+
   workflow_dispatch:
 
 permissions:
@@ -32,6 +32,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Copy .nojekyll file
+        run: cp .nojekyll ./dist/ || touch ./dist/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
@@ -40,4 +42,4 @@ jobs:
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2 
