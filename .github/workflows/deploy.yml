@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['master']
+    branches: ['master', 'main']
   workflow_dispatch:
 
 permissions:
@@ -41,7 +41,6 @@ jobs:
         run: |
           touch dist/.nojekyll
           echo "Created .nojekyll file"
-          cp -f index.html dist/ || echo "index.html already in dist"
 
       # This is a backup manual deployment strategy that should work even if the action fails
       - name: Deploy to GitHub Pages
