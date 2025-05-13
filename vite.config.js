@@ -7,5 +7,13 @@ export default defineConfig({
   base: '/EngRevision/',
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        // Force all JS files to have .js extension
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
   }
 })
