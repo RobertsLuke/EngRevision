@@ -28,7 +28,7 @@ jobs:
           echo "Node version: $(node -v)"
           echo "NPM version: $(npm -v)"
           npm install
-          npm install @tailwindcss/postcss@4.0.0-beta.4 tailwindcss@4.0.0-beta.4 postcss --save-dev
+          npm install @tailwindcss/postcss@4.0.0-beta.4 tailwindcss@4.0.0-alpha.9 postcss --save-dev
 
       - name: Build project
         run: |
