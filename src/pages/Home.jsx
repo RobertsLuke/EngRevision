@@ -2,6 +2,19 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Modal from '../components/Modal'
 
+// Feature card component
+const FeatureCard = ({ title, description, icon }) => {
+  return (
+    <div className="p-6 border border-slate-200 rounded-lg hover:shadow-md transition-shadow">
+      <div className="text-emerald-600 mb-3">
+        {icon}
+      </div>
+      <h3 className="text-xl font-semibold mb-2 text-slate-800">{title}</h3>
+      <p className="text-slate-600">{description}</p>
+    </div>
+  )
+}
+
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -87,8 +100,6 @@ const Home = () => {
           } 
         />
       </section>
-      
-
 
       {/* How to Answer Questions Modal */}
       <Modal
@@ -139,18 +150,6 @@ const Home = () => {
           </div>
         </div>
       </Modal>
-    </div>
-  )
-}
-
-const FeatureCard = ({ title, description, icon }) => {
-  return (
-    <div className="p-6 border border-slate-200 rounded-lg hover:shadow-md transition-shadow">
-      <div className="text-emerald-600 mb-3">
-        {icon}
-      </div>
-      <h3 className="text-xl font-semibold mb-2 text-slate-800">{title}</h3>
-      <p className="text-slate-600">{description}</p>
     </div>
   )
 }

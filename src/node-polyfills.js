@@ -6,3 +6,8 @@ import { Buffer } from 'buffer';
 
 // Add Node.js global objects to the window object
 window.Buffer = Buffer;
+window.global = window;
+
+// This empty export is necessary to ensure the file is treated as an ES module
+export {};
+
